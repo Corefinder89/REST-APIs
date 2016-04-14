@@ -9,7 +9,8 @@ import javax.ws.rs.core.Application;
 public class MyApplication extends Application
 {
 	@Override
-    public Set<Class<?>> getClasses() {
+    public Set<Class<?>> getClasses() 
+	{
         Set<Class<?>> set = new HashSet<>();
         set.add(CtoFService.class);
         set.add(FtoCService.class);
