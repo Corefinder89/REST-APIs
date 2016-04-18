@@ -6,10 +6,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Application;
 
+//Annotation for URL path to query the API service
 @Path("/ctofservice")
 public class CtoFService extends Application
 {
+	//Request made to the API service
 	@GET
+	//Desired format for the data shown when calling the API service
 	@Produces("application/xml")
 	public String convertCtoF()
 	{
@@ -22,8 +25,11 @@ public class CtoFService extends Application
 		return "<ctofservice>" + "<celsius>" + celsius + "</celsius>" + "<ctofoutput>" + result + "</ctofoutput>" + "</ctofservice>";
 	}
 	
+	//Annotation for URL path to pass parameter as a query to the API service. 
 	@Path("{C}")
+	//Request made to the API service
 	@GET
+	//Desired format for the data shown when calling the API service
 	@Produces("application/xml")
 	public String convertCtoFfromParameter(@PathParam("C") Double C)
 	{

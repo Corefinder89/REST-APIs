@@ -8,11 +8,13 @@ import javax.ws.rs.core.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
+//Annotation for URL path to query the API service
 @Path("/ftocservice")
 public class FtoCService 
 {
+	//Request made to the API service
 	@GET
+	//Desired format for the data shown when calling the API service
 	@Produces("application/json")
 	public Response convertFtoC() throws JSONException
 	{
@@ -26,9 +28,11 @@ public class FtoCService
 		String result = "@Produces(\"application/json\") Output: \n\nF to C Converter Output: \n\n" + jsonObject;
 		return Response.status(200).entity(result).build();
 	}
-	
+	//Annotation for URL path to pass parameter as a query to the API service.
 	@Path("{F}")
+	//Request made to the API service
 	@GET
+	//Desired format for the data shown when calling the API service
 	@Produces("application/json")
 	public Response convertFtoCfromParameter(@PathParam("F") float F) throws JSONException
 	{
